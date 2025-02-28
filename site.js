@@ -82,6 +82,14 @@ const vue_app = Vue.createApp({
               };
               return month + " " + dateArray[2] + ", " + dateArray[0];
             },
+            nextPoster() {
+              this.movies[index].posterindex = (this.movies[index].posterindex + 1) % this.movies[index].posters.length;
+            }
+      },
+      computed: {
+        currentPoster() {
+          return this.movies[index].posters[this.movies[index].posterindex];
+        }
       }
 
 })
