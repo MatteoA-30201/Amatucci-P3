@@ -22,75 +22,85 @@
 
 
 const vue_app = Vue.createApp({
-      // This automatically imports your movies.json file and puts it into
-      //   the variable: movies
-      created () {
-            fetch('movies.json').then(response => response.json()).then(json => {
-                  this.movies = json
-            })
-      },
-      data() {
-        return {
-            // This holds your movies.json data.
-            movies: [],
-            title: "IMDB + Matteo's Top 8 Movies",
-            owner: "Matteo",
-            github: "https://github.com/MatteoA-30201/Amatucci-P3"
-      }
+  // This automatically imports your movies.json file and puts it into
+  //   the variable: movies
+  created() {
+    fetch('movies.json').then(response => response.json()).then(json => {
+      this.movies = json
+    })
+  },
+  data() {
+    return {
+      // This holds your movies.json data.
+      movies: [],
+      title: "IMDB + Matteo's Top 8 Movies",
+      owner: "Matteo",
+      github: "https://github.com/MatteoA-30201/Amatucci-P3"
+    }
+  },
+  methods: {
+    /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
+    getMonthText(dateArray) {
+      console.log(dateArray);
+      let month;
+      switch (dateArray[1]) {
+        case 1:
+          month = "January";
+          break;
+        case 2:
+          month = "February";
+          break;
+        case 3:
+          month = "March";
+          break;
+        case 4:
+          month = "April";
+          break;
+        case 5:
+          month = "May";
+          break;
+        case 6:
+          month = "June";
+          break;
+        case 7:
+          month = "July";
+          break;
+        case 8:
+          month = "August";
+          break;
+        case 9:
+          month = "September";
+          break;
+        case 10:
+          month = "October";
+          break;
+        case 11:
+          month = "November";
+          break;
+        case 12:
+          month = "December";
+      };
+      return month + " " + dateArray[2] + ", " + dateArray[0];
     },
-      methods: {
-            /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
-            getMonthText(dateArray) {
-              console.log(dateArray);
-              let month;
-              switch (dateArray[1]) {
-                case 1:
-                  month = "January";
-                  break;
-                case 2:
-                  month = "February";
-                  break;
-                case 3:
-                  month = "March";
-                  break;
-                case 4:
-                  month = "April";
-                  break;
-                case 5:
-                  month = "May";
-                  break;
-                case 6:
-                  month = "June";
-                  break;
-                case 7:
-                  month = "July";
-                  break;
-                case 8:
-                  month = "August";
-                  break;
-                case 9:
-                  month = "September";
-                  break;
-                case 10:
-                  month = "October";
-                  break;
-                case 11:
-                  month = "November";
-                  break;
-                case 12:
-                  month = "December";
-              };
-              return month + " " + dateArray[2] + ", " + dateArray[0];
-            },
-            nextPoster() {
-              this.movies[index].posterindex = (this.movies[index].posterindex + 1) % this.movies[index].posters.length;
-            }
-      },
-      computed: {
-        currentPoster() {
-          return this.movies[index].posters[this.movies[index].posterindex];
-        }
-      }
+    posterClick(index) {
+      this.movies[index].posterindex++
+
+      if (this.movies[index].posterindex >= this.movies[index].posters.length) {
+        this.movies[index].posterindex = 0;
+        return this.movies[index].posterindex;
+      };
+
+      if (this.movies[index].posterindex < 0) {
+        this.movies[index].posterindex = 0;
+        return this.movies[index].posterindex;
+      };
+    }
+  },
+  computed: {
+    currentPoster() {
+      return this.movies[index].posters[this.movies[index].posterindex];
+    }
+  }
 
 })
 
