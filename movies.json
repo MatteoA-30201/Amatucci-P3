@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
-      }
+      },
+      {
+        "title": "Everything Everywhere All At Once",
+        "iscore": 7.8,
+        "rating": "R",
+        "runtime": 139,
+        "released": [2022, 4, 8],
+        "country": "USA",
+        "posters": ["img/EEAAO 1.jpg", "img/EEAAO 2.jpg"],
+        "imdb": "https://www.imdb.com/title/tt6710474/?ref_=nv_sr_srsg_1_tt_6_nm_2_in_0_q_Everything%2520",
+        "website": "https://a24films.com/films/everything-everywhere-all-at-once",
+        "likes": 1609,
+        "dislikes": 542,
+        "posterindex": 0
+      },
+      {
+        "title": "Spiderman: Into the Spiderverse",
+        "iscore": 8.4,
+        "rating": "PG",
+        "runtime": 117,
+        "released": [2018, 12, 14],
+        "country": "USA",
+        "posters": ["img/Spiderman into the Spiderverse 1.jpg", "img/spiderman into the spider verse 2.jpg"],
+        "imdb": "https://www.imdb.com/title/tt4633694/",
+        "website": "https://www.sonypictures.com/movies/spidermanintothespiderverse",
+        "likes": 2406,
+        "dislikes": 278,
+        "posterindex": 0
+    },
+    {
+      "title": "Spiderman: Across the Spiderverse",
+      "iscore": 8.5,
+      "rating": "PG",
+      "runtime": 140,
+      "released": [2023, 6, 2],
+      "country": "USA",
+      "posters": ["img/Spiderman ATSV 1.jpg", "img/Spiderverse ATSV 2.jpg"],
+      "imdb": "https://www.imdb.com/title/tt9362722/",
+      "website": "https://www.acrossthespiderverse.movie",
+      "likes": 2346,
+      "dislikes": 243,
+      "posterindex": 0
+    }
 ]

@@ -95,11 +95,10 @@ const vue_app = Vue.createApp({
               };
             },
             timeText(minutes) {
-              timeAsDecimal = this.movies[index].runtime / 60;
+              timeAsDecimal = minutes / 60;
               hours = Math.trunc(timeAsDecimal);
-              minutes = this.movies[index].runtime - hours * 60 ;
-              fullRuntime = hours + "h " + minutes + "m";
-              return fullRuntime;
+              remainingMinutes = minutes - hours * 60 ;
+              return hours + "h " + remainingMinutes + "m";
             }
           },
           computed: {
